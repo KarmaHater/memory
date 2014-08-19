@@ -36,25 +36,30 @@ Mermory.Cards.Controller.prototype = {
   },
   bindListeners: function(){
     $('.card').on('click', function(e){
-        this.letterCards($('.card'))
+        this.cardsCount($('.card'))
         $(e.target).addClass('white')
-      }.bind(this)
-      )
+      }.bind(this))
   },
-  letterCards: function(cards){
+  cardsCount: function(cards){
     cards.each( function(index, card){
       if ($(card).hasClass('white')){
         this.count +=  1
-        }
+         }
       }.bind(this))
-      this.checkCards()
+      if (this.count > 2) {
+        this.checkMatch()
+        };
     },
-  checkCards: function(){
-    if(this.count > 2 ){
-      $('.card').each(function(index, card){
-        $(card).removeClass('white')
-      })
-      this.count = 0
+  checkMatch:function(){
+    console.log('cats')
+      var cards =  $('.container').find('.white')
+      var first = cards.first().html()
+      var last = cards.last().html()
+      if ( first === last){
+        console.log('cats')
+    //   }else {
+    //     this.turnCards()
+    //   }
     }
   }
 }

@@ -1,0 +1,3 @@
+var Mermory = {
+  Cards: {}
+}

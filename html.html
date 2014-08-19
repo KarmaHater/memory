@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title></title>
+
+  <link rel="stylesheet" type="text/css" href="css.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/vendor/underscore.js"></script>
+  <script type="text/javascript" src="js/vendor/underscore.js"></script>
+  <script type="text/javascript" src="js/vendor/handlebars.js"></script>
+
+
+  <!-- my files  -->
+  <script type="text/javascript" src="namespace.js"></script>
+  <script type="text/javascript" src="js/init.js"></script>
+  <script type="text/javascript" src="js/cards/model.js"></script>
+</head>
+<body>
+  <div class="container">
+  </div>
+
+
+  <!-- handle bar templetes -->
+
+  <script id="card-template" type="text/x-handlebars-template">
+    {{#each cards}}
+    <div class="card">{{this}}</div>
+    {{/each}}
+  </script>
+
+</body>
+</html>

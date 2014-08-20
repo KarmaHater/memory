@@ -8,24 +8,10 @@ Mermory.Cards.Model.prototype = {
   }
 }
 
-Mermory.Cards.View = function(){
-
-}
-
-Mermory.Cards.View.prototype = {
-  displayCards: function(letters){
-    var source   = $("#card-template").html();
-    var template = Handlebars.compile(source);
-    var context = {cards: letters}
-    var html    = template(context);
-    $('.container').append(html)
-  }
-}
-
 Mermory.Cards.Controller = function(model, view, game){
   this.model = model;
   this.view = view;
-  this.count = 0
+  this.score = 0
 }
 
 Mermory.Cards.Controller.prototype = {
@@ -41,25 +27,36 @@ Mermory.Cards.Controller.prototype = {
       }.bind(this))
   },
   cardsCount: function(cards){
-    cards.each( function(index, card){
-      if ($(card).hasClass('white')){
-        this.count +=  1
-         }
-      }.bind(this))
-      if (this.count > 2) {
+      if ($('.white').length == 2) {
         this.checkMatch()
         };
     },
   checkMatch:function(){
-    console.log('cats')
-      var cards =  $('.container').find('.white')
-      var first = cards.first().html()
-      var last = cards.last().html()
-      if ( first === last){
-        console.log('cats')
-    //   }else {
-    //     this.turnCards()
-    //   }
+      var cards =  $('.card_container').find('.white')
+      var firstCard = cards.first()
+      var lastCard = cards.last()
+      var firstLetter = cards.first().html()
+      var lastLetter = cards.last().html()
+      if ( firstLetter == lastLetter){
+        this.turnCard(firstCard)
+        this.turnCard(lastCard)
+        this.changeScore()
+        this.view.displayScore(this.score)
+        this.winner()
+      } else {
+        $(cards).first().removeClass('white')
+        $(cards).last().removeClass('white')
+      }
+    },
+    changeScore: function(){
+      this.score += 1
+    },
+    turnCard: function(card){
+      this.view.flippedCard(card)
+    },
+    winner: function(){
+      if(this.score == 20){
+        alert('You win!')
+      }
     }
   }
-}

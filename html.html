@@ -13,9 +13,16 @@
   <script type="text/javascript" src="namespace.js"></script>
   <script type="text/javascript" src="js/init.js"></script>
   <script type="text/javascript" src="js/cards/model.js"></script>
+  <script type="text/javascript" src="js/cards/view.js"></script>
 </head>
+
 <body>
-  <div class="container">
+
+
+<div class="score">
+</div>
+<div class="button">StartOver</div>
+  <div class="card_container">
   </div>
 
 
@@ -25,6 +32,10 @@
     {{#each cards}}
     <div class="card">{{this}}</div>
     {{/each}}
+  </script>
+
+  <script id="score-template" type="text/x-handlebars-template">
+    <h2 class="card_score">Your score is {{score}}!</h2>
   </script>
 
 </body>

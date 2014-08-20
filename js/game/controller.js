@@ -8,10 +8,9 @@ Mermory.Game.Controller.prototype = {
   makeDeck: function(cards){
     var shuffledCards = this.model.shuffle(cards)
     this.view.displayCards(shuffledCards)
-    this.bindListeners()
   },
   bindListeners: function(){
-    $('.card').on('click', function(e){
+    $('body').on('click','.card', function(e){
       this.cardsCount($('.card'))
       $(e.target).addClass('white')
     }.bind(this))
@@ -20,8 +19,9 @@ Mermory.Game.Controller.prototype = {
       $( ".card" ).each(function( index, card ) {
         $(card).remove()
       });
+      var cards = this.model.shuffle(this.model.cards)
       this.view.removeScore()
-      this.makeDeck()
+      this.makeDeck(cards)
     }.bind(this))
 
     $(document).on('changeLevel', function(e, level){

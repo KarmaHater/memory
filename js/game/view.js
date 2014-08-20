@@ -2,6 +2,7 @@ Mermory.Game.View = function(){}
 
 Mermory.Game.View.prototype = {
   displayCards: function(letters){
+    // var template = "#" + "t"
     var source   = $("#card-template").html();
     var template = Handlebars.compile(source);
     var context = {cards: letters}

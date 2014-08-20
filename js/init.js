@@ -1,8 +1,9 @@
 $(document).ready(function() {
-  var cv = new Mermory.Cards.View
-  var cm = new Mermory.Cards.Model
-  var cardCollection = new Mermory.Cards.Controller(cm, cv)
+  var cm = new Mermory.Game.Model
+  var cardCollection = new Mermory.Game.Controller(cm)
   cardCollection.makeDeck()
-})
 
+  var levels = new Mermory.Level.Controller()
+  levels.init()
+})
 

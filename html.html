@@ -8,23 +8,41 @@
   <script type="text/javascript" src="js/vendor/underscore.js"></script>
   <script type="text/javascript" src="js/vendor/handlebars.js"></script>
 
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://path/to/font-awesome/css/font-awesome.min.css">
+
 
   <!-- my files  -->
   <script type="text/javascript" src="namespace.js"></script>
   <script type="text/javascript" src="js/init.js"></script>
-  <script type="text/javascript" src="js/cards/model.js"></script>
-  <script type="text/javascript" src="js/cards/view.js"></script>
+  <script type="text/javascript" src="js/game/model.js"></script>
+  <script type="text/javascript" src="js/game/view.js"></script>
+   <script type="text/javascript" src="js/levels/view.js"></script>
+  <script type="text/javascript" src="js/game/controller.js"></script>
 </head>
 
 <body>
 
-
+<div class="container">
+<div class="level_buttons">
+  <span>Levels</span>
+  <i class="fa fa-heart fa-3x"> 1</i>
+  <i class="fa fa-heart fa-3x"> 2</i>
+  <i class="fa fa-heart fa-3x"> 3</i>
+  <i class="fa fa-heart fa-3x"> 4</i>
+  <i class="fa fa-heart fa-3x"> 5</i>
+  <!-- <i class="fa fa-heart fa-3x"> 6</i> -->
+</div>
 <div class="card_container"></div>
 
 <div class="score">
 </div>
+
 <div class="center_button">
   <div class="css_btn_class">StartOver</div>
+</div>
+
+
 </div>
 
 
@@ -38,6 +56,10 @@
 
   <script id="score-template" type="text/x-handlebars-template">
     <h2 class="card_score">Your score is {{score}}!</h2>
+  </script>
+
+   <script id="button-template" type="text/x-handlebars-template">
+
   </script>
 
 </body>

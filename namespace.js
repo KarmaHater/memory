@@ -1,3 +1,5 @@
 var Mermory = {
-  Cards: {}
+  Game: {},
+  Level: {}
+
 }

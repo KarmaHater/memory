@@ -43,10 +43,5 @@ Mermory.Cards.Controller.prototype = {
     },
     turnCard: function(card){
       this.view.flippedCard(card)
-    },
-    winner: function(){
-      if(this.score == 20){
-        alert('You win!')
-      }
     }
   }
